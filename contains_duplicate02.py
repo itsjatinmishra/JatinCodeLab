@@ -7,12 +7,14 @@ def containsDuplicate(nums, k):
         
         my_set.add(nums[i])
         
-        if len(my_set) > k:
-            my_set.discard(nums[i-k])
+        # Maintain window of size k
+        if i >= k:
+            my_set.remove(nums[i - k])
+    
     return False
 
 
-
-nums = [1,2,3,4,5]
-k = 3
-print(containsDuplicate(nums, k))
+# Test cases
+print(containsDuplicate([1,2,3,1], 3))   # True
+print(containsDuplicate([1,0,1,1], 1))   # True
+print(containsDuplicate([1,2,3,1,2,3], 2))  # False
