@@ -7,7 +7,7 @@ def find_missing_positive(nums):
     # Step 1: Fill dictionary
     for i in range(len(nums)):
         # If number is negative or zero
-        if nums[i] <= 0:
+        if nums[i] <= 0 or nums[i] > len(nums):
             # Store it with value -1 (just marking it)
             my_dict[nums[i]] = -1
         else:
@@ -27,6 +27,8 @@ def find_missing_positive(nums):
         else:
             # First missing positive number found
             return i
+
+    return len(nums) + 1
 
 
 # Example usage
