@@ -4,7 +4,7 @@ def minWindow(s,t):
     unique = 0
     create = 0
 
-    #sliding window pointers
+    #sliding window pointer
     left = 0
     right = 0
 
